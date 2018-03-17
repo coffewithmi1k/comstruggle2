@@ -4,10 +4,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.ITestNGListener;
 
 
@@ -27,16 +24,19 @@ public class SimpleTest {
     }
     @Story("My story")
 
-    @Test
-    public void getGoogle(){
+    @Test(priority = 3)
+    public void getGoogle() throws InterruptedException {
         driver.get("Https:Google.com");
+        Thread.sleep(5000);
     }
 
-    @Test
-    public void getFacebook()  {
+    @Test(priority = 2)
+    public void getFacebook() throws InterruptedException {
         driver.get("Https:facebook.com");
-
+Thread.sleep(5000);
     }
+
+
 
    
 
